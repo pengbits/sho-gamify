@@ -1,0 +1,71 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site			 		sho.com <desktop>
+	// @project		 		gamification
+	// @file			 		faqs.css
+	// @author		 		ncavanagh
+	// @modified			04.27.13
+	// @desc					rules for gamify faqs
+	// --------------------------------------------------------------------------------------------
+	
+	$padding: 0 18% 8px;
+		
+	.gamify-faq .series-gamify-container {
+		background-color:#1d1d1d;
+	 }
+	
+	.is-remix h2.gamify-section-header {
+		padding: 14px 18%;
+	}
+	
+	.gamify-faq-container {
+		color:#999;		
+		background: #1d1d1d; 		
+		dl {
+			max-width: 1600px;
+			margin: 0 auto;
+			dt {
+				margin-top:20px;
+				padding: 0 0 8px 22px;
+				font-size:16px;
+				color:#fff; }
+			dd {
+				border-bottom:1px solid #000;
+				padding: 0 0 8px 22px; 
+				line-height:16px; }				
+			dt:last-child {
+				border:0; }	
+		}
+		
+		// points info
+		dd ul {
+			width:300px;
+			margin-top:20px;
+			}
+		dd li span {
+			float:right;
+			}
+		
+	}	
+	
+	.is-remix .gamify-faq-container {
+		dl {
+			max-width: 1600px;
+			margin: 0 auto;
+			dt {
+				margin-top:20px;
+				padding: $padding;
+				font-size:16px;
+				color:#fff; }
+			dd {
+				border-bottom:1px solid #000;
+				padding: 0 18% 14px; 
+				line-height:16px; }				
+			dt:last-child {
+				border:0; }	
+		}
+		
+	}
+	

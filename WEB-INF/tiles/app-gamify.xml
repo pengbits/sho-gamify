@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE tiles-definitions PUBLIC 
+  	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+  	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+	<!--
+	XML
+	================================================================================
+	@site       	sho.com <rebuild>
+	@project    	Gamify
+	@file       	tiles/app-gamify.xml
+	@author			dpaul
+	@modified		09.25.14
+	@note			restored redemption banner and item gallery tiles!
+	================================================================================
+	
+	-->
+
+  <tiles-definitions> 
+	
+	<!--
+	=:layouts 	
+	============================================================================ -->
+	<definition name="layouts.gamify" extends="layouts.default">
+		<put-attribute name="nav_secondary" value="/gamify/views/_nav_gamify.jsp" />
+		<put-attribute name="use_max_width" value="false" />
+		<put-attribute name="useFullBleed" value="false" />
+	</definition>
+
+	<definition name="layouts.gamify.mobile" extends="layouts.default.mobile" />
+	
+	<definition name="layouts.gamify.redemption" extends="layouts.gamify">
+		<put-attribute name="bodyCssClass" value="red-rewards gamify redemption" />
+		<put-attribute name="assets_page_css" value="/gamify/views/_assets_css.jsp" />
+		
+	</definition>
+
+	<definition name="layouts.gamify.redemption.mobile" extends="layouts.gamify.mobile" />
+	
+	<!--
+	=:modules 	
+	============================================================================ -->
+	<definition name="gamify.user_snapshot" 		template="/gamify/views/modules/_user_snapshot.jsp" />
+	<definition name="gamify.vertical_nav" 			template="/gamify/views/modules/_vertical_nav.jsp" />
+	<definition name="gamify.leaderboards" 			template="/gamify/views/modules/_leaderboards.jsp" />
+	<definition name="gamify.challenge_gallery" 	template="/gamify/views/modules/_challenge_gallery.jsp" />
+	
+	<definition name="gamify.item_gallery" 			template="/gamify/views/modules/_item_gallery.jsp" />
+	<definition name="gamify.redemption_banner" 	template="/gamify/views/modules/_redemption_banner.jsp" />
+	
+	<definition name="gamify.fan_clubs_gallery" 	template="/gamify/views/modules/_fan_clubs_gallery.jsp" />
+	<definition name="gamify.activity_stream"	 	template="/gamify/views/modules/_activity_stream.jsp" />
+	<definition name="gamify.activity_topline"	 	template="/gamify/views/modules/_activity_topline.jsp" />
+	<definition name="gamify.welcome" 				template="/gamify/views/modules/_welcome.jsp" />
+	<definition name="gamify.faq" 					template="/gamify/views/modules/_faq.jsp" />
+	<definition name="gamify.two_col_layout" 		template="/gamify/views/modules/_two_col_layout.jsp" />
+	<definition name="gamify.series_name_setup" 	template="/series/lib/views/gamify/_series_name_setup.jsp" />
+
+	
+	<!--
+	=:pages, util	
+	============================================================================ -->
+	<definition name="gamify/notifications" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Gamify : Notifications" />
+		<put-attribute name="layout" value="layouts.minimal" />
+		<put-attribute name="bodyCssClass" value="gamify" />
+		<put-attribute name="assets_page_js" value="/gamify/views/_assets_js.jsp" />
+		<put-attribute name="assets_page_css" value="/gamify/views/_assets_css.jsp" />
+		<put-attribute name="content" value="/gamify/views/notifications/index.jsp" />
+	</definition>
+	
+	<definition name="gamify/notifications/static" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Gamify : Notifications" />
+		<put-attribute name="layout" value="layouts.minimal" />
+		<put-attribute name="bodyCssClass" value="gamify" />
+		<put-attribute name="assets_page_js" value="/gamify/views/_assets_js.jsp" />
+		<put-attribute name="assets_page_css" value="/gamify/views/_assets_css.jsp" />
+		<put-attribute name="content" value="/gamify/views/notifications/static.jsp" />
+	</definition>
+	
+	<definition name="gamify/set-preference" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Gamify : Set Preference" />
+		<put-attribute name="layout" value="layouts.minimal" />
+		<put-attribute name="bodyCssClass" value="gamify" />
+		<put-attribute name="assets_page_js" value="/gamify/views/_assets_js.jsp" />
+		<put-attribute name="assets_page_css" value="/gamify/views/_assets_css.jsp" />
+		<put-attribute name="content" value="/gamify/views/set_preference/index.jsp" />
+	</definition>
+	
+	<!--
+   	=:pages, v1, v2, =:redirect, =:canonical	
+    ============================================================================ -->
+	<definition name="red-rewards/challenges" extends="layouts.multi-platform">
+		<put-attribute name="layout" value="layouts.minimal" />
+		<put-attribute name="title" value="Showtime Red Rewards : Challenge Details" />
+		<put-attribute name="bodyCssClass" value="gamify canonical-url" />
+		<put-attribute name="useFullBleed" value="true" />
+		<put-attribute name="assets_page_css" value="/gamify/views/_assets_css.jsp" />
+		<put-attribute name="filters" value="/gamify/views/canonical_url/_filters.jsp" />
+		<put-attribute name="content" value="/gamify/views/canonical_url/show.jsp" />
+	</definition>
+  	
+	<!--
+   	=:pages, sho.com, v3 	
+    ============================================================================ -->
+	<definition name="red-rewards/featured-challenges" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Featured Challenges" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:challenges:featured" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-featured-challenges" />
+		<put-attribute name="content" value="/gamify/views/challenges/featured.jsp" />
+	</definition>
+	
+	<definition name="red-rewards/challenges/showtime" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Challenges" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:challenges:home" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify" />
+		<put-attribute name="content" value="/gamify/views/challenges/showtime.jsp" />
+	</definition>
+
+	<definition name="red-rewards/fan-clubs" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Fan Clubs" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:fan clubs" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-fan-clubs" />
+		<put-attribute name="content" value="/gamify/views/fan_clubs/index.jsp" />
+	</definition>
+
+	<definition name="red-rewards/my-activity" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - My Activity" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:my activity" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-my-activity" />
+		<put-attribute name="content" value="/gamify/views/my_activity/index.jsp" />
+	</definition>
+	
+		
+	<definition name="red-rewards/achievements" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Achievements" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:achievements" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-achievements" />
+		<put-attribute name="content" value="/gamify/views/achievements/index.jsp" />
+	</definition>
+
+	<definition name="red-rewards/leaderboards" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Leaderboards" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:leaderboards" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-leaderboards" />
+		<put-attribute name="content" value="/gamify/views/leaderboards/index.jsp" />
+	</definition>
+
+	<definition name="red-rewards/faq" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Frequently Asked Questions" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:faq" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify faq" />
+		<put-attribute name="content" value="/gamify/views/faq/index.jsp" />
+	</definition>
+
+	<!-- Redemption - Gallery -->
+	<definition name="red-rewards/redemption" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards Redemption" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:redemption:home" />
+		<put-attribute name="layout" value="layouts.gamify" />
+		<put-attribute name="bodyCssClass" value="red-rewards gamify gamify-redemption" />
+		<put-attribute name="content" value="/gamify/views/redemption/index.jsp" />
+	</definition>
+	
+	
+	<!-- Redemption - checkout flow -->
+	<definition name="red-rewards/redemption/redeem" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Enter Shipping Address" />
+		<put-attribute name="pageTracking" value="red rewards:redemption:redeem" />
+		<put-attribute name="layout" value="layouts.gamify.redemption" />
+		<put-attribute name="content" value="/gamify/views/redemption/register.jsp" />
+	</definition>
+
+	<definition name="red-rewards/redemption/redeem/confirm" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Confirm Shipping Address" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:redemption:confirm" />
+		<put-attribute name="layout" value="layouts.gamify.redemption" />
+		<put-attribute name="content" value="/gamify/views/redemption/redeem.jsp" />
+	</definition>
+
+	<definition name="red-rewards/redemption/success" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Successful Redemption" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:redemption:success" />
+		<put-attribute name="layout" value="layouts.gamify.redemption" />
+		<put-attribute name="content" value="/gamify/views/redemption/success.jsp" />
+	</definition>
+
+	<definition name="red-rewards/redemption/error" extends="layouts.multi-platform">
+		<put-attribute name="title" value="Showtime - Red Rewards - Redemption Error" />
+		<put-attribute name="pageTracking" value="red rewards:showtime:redemption:error" />
+		<put-attribute name="layout" value="layouts.gamify.redemption" />
+		<put-attribute name="content" value="/gamify/views/redemption/error.jsp" />
+	</definition>
+	
+  </tiles-definitions>

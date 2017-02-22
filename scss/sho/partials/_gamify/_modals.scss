@@ -1,0 +1,53 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <desktop>
+	// @project				gamification
+	// @file				modals.css
+	// @author				ncavanagh
+	// @author				dpaul
+	// @modified			04.02.14
+	// @desc				rules for tooltip modals in red rewards
+	// 
+	// ---------------------------------------------------------------------------------------- 
+
+	.gamify-modal-info {
+		padding:20px;
+		font-size:12px;
+		line-height:14px;
+		color:#898989;
+		background-color:#000;
+		border:1px solid #202423;
+		border-top:0;
+
+		ul { 
+			margin:32px 0; 	
+			}
+
+		li, 
+		h3 {
+			margin-bottom:9px;
+			color:#fff;
+			text-transform:uppercase; 
+			}
+		
+		h3 {
+			margin-bottom:4px;
+			font-size:12px;
+			line-height:14px; 
+			}
+
+		li span {
+			float:right; 
+			}
+		
+		}
+
+	.gamify-modal-level-info {
+		padding-bottom:6px;
+		
+		ul {
+			margin:18px 0px 0px 0px;
+			}
+		}

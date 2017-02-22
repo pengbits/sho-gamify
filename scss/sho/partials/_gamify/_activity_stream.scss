@@ -1,0 +1,148 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site			sho.com <desktop>
+	// @project			gamification
+	// @file			_activity_stream.scss
+	// @author			dpaul
+	// @modified		03.04.14
+	// @desc			rules for fan clubs
+	// --------------------------------------------------------------------------------------------
+	.my-activity-points-details, 
+	.my-activity-points-details li {
+		@include border-box;
+		display:block;
+		}
+		
+	.my-activity-points-details {
+		font-size:30px;
+		line-height:34px;
+		font-weight:400;
+		
+		@media screen and (max-width:1024px) {
+			padding:0 5%;
+			}
+		@media screen and (min-width:1024px) {
+			padding:0 11%;
+			}
+		
+		li {
+			position:relative;
+			color:#818181;
+			padding:25px 10% 31px 0px;
+			border-bottom:#2b2b2b solid 1px;
+			&:first-child {
+				padding-top:65px;
+				}
+				
+			&:last-child {
+				border:none;
+				padding-bottom:70px
+				}
+				
+			span {
+				position:absolute;
+				right:0;
+				}
+			}
+		}
+		
+	.activity-stream-container {
+	 	@include border-box;
+		width:50%;
+		margin-bottom:200px;
+		
+		@media screen and (max-width:1024px) {
+			&.left  { padding-left:5%; padding-right:2%; }
+			&.right { padding-left:2%; padding-right:5%; }
+			}
+
+		@media screen and (min-width:1024px) {
+			&.left  { padding-left:11%; padding-right:1.5%; }
+			&.right { padding-left:1.5%; padding-right:11%; }
+			}
+			
+		h4 {
+			padding:19px 0px 17px 24px;
+			font-size:20px;
+			line-height:20px;
+			color:$gamify-accent;
+			text-transform:uppercase;
+			background: $gamify-tab-grey;
+			border-left:#2b2b2b solid 1px;
+			}
+		
+		ul {
+			padding-top:22px;
+			border-left:#2b2b2b solid 1px;
+			}
+
+		}
+		
+	.activity-stream-container.is-empty {
+		h4 {
+			border-left:0;
+			}
+		ul {
+			color:$sports-lighter-grey;
+			border-left:none;
+			a {
+				color:$sports-lighter-grey;
+				text-decoration:underline;
+				}
+			}
+		}
+		
+		
+	.activity-stream li {
+		position:relative;
+		padding-left:24px;
+		padding-bottom:40px;
+		font-size:14px;
+		line-height:15.75px; // 1.125%
+				
+		span {
+			display:block;
+			padding-top:7px;
+			font-size:12px;
+			color:$gamify-accent;
+			
+			&.left,
+			&.right {		
+				float:left;
+				padding-top:0;
+				em {
+					color:#818181;
+					}
+				}
+			
+			&.left {
+				width:110px;
+				}
+			}
+		
+		.activity-stream-icon {
+			position:absolute;
+			left:-8px; 
+			top:-1px;
+			width:17px;
+			height:17px;
+			overflow:hidden;
+			}
+		
+
+		&:last-child {
+			padding-bottom:0;
+			
+			.activity-stream-icon {
+				background:#1d1d1d;	// mask the trailing pipe
+				height:80px;
+				}
+			}
+		}
+		
+
+
+	
+	// No surrender, No delete! 

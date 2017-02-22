@@ -1,0 +1,207 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <desktop>
+	// @project				gamification
+	// @file				leaderboards.css
+	// @author				ncavanagh
+	// @modified			03.20.13
+	// @desc				rules for leaderboards
+	// 
+	// ---------------------------------------------------------------------------------------- 
+
+	.leaderboards { 
+		min-height:700px;
+		/*margin-bottom:36px;*/
+		color:#fff;
+		background-color:#1d1d1d;
+		font-size:16px; 
+		}
+
+	.leaderboards h2 { 
+		padding:20px 22px 18px;
+		font-weight:bold;
+		background:#000;
+		color:#ab1a26; 
+		}
+
+	.leaderboard-stage {
+		display:table; 
+		width:710px;
+		text-align:center; 
+		}
+
+	.leaderboard-th { 
+		font-weight:bold; 
+		}
+
+	.leaderboard-tr, .leaderboard-th {
+		display:table-row; 
+		background-color:#211f1f;
+		font-weight:400; 
+		}
+
+	.leaderboard-tr:nth-child(even) {    
+		background-color:#2d2b2b; 
+		}
+
+	.leaderboard-tr-highlight {
+		background:white; 
+		}
+
+	.leaderboard-tr:last-child {
+		border-bottom:0; 
+		}
+
+	.leaderboard-td {
+		display:table-cell;
+		vertical-align:middle;
+		padding:10px 0; 
+		}
+
+	.leaderboard-rank { 
+		width:7%; 
+		}
+
+	.leaderboard-username {
+		text-align:left; 
+		}
+
+	.leaderboard-values { 
+		width:15%;
+		padding-right:50px;
+		text-align:right; 
+		}
+
+	.leaderboard-avatar { 
+		width:32px;
+		padding-right:24px; 
+		}
+
+	.leaderboard-avatar img {
+		width:32px;
+		height:32px; 
+		}
+
+	// leaderboard navigation dropdown
+	// ----------------------------------------------------------------------------------------
+	.leaderboard-nav {
+		float:left; 
+		width:610px;
+		height:50px;
+		background-color:#CCC;
+
+	.dd-menu, .leaderboard .leaderboard-nav .dd-content { 
+		margin:0;
+		width:710px;
+		text-align:center;
+		text-transform:uppercase; 
+		color:#fff;
+		font-size:12px;
+		-moz-border-radius:0; 
+		-webkit-border-radius:0; 
+
+		}
+
+	.dd-menu {
+		width:100%;
+		background-color:transparent; 
+		}
+
+	.dd-title { 
+		height:50px; 
+		}
+
+	.leaderboard-dropdown-arrow {
+		position:relative;
+		top:3px;
+		right:-4px;
+		display:inline-block;
+		width:15px;
+		height:15px;
+		background:url("/assets/images/lib/icons/dropdown-arrow.png") no-repeat scroll right center transparent; 
+		}
+
+	.dd-menu .dd-title a {
+		display:block;
+		padding:0;
+		height:50px;
+		line-height:50px;
+		text-decoration:none;
+		background:none; 
+		}
+
+	.dd-menu .dd-content { 
+		position:relative;
+		left:-50px;
+		background:#1a1a1a; 
+		
+ 		li {
+			padding:18px;
+			width:674px;
+			cursor:pointer; 
+			
+			a {
+				padding:0;
+				
+				&:hover {
+					background:none
+					}
+				}
+			}
+		} 
+	
+	} // END leaderboard-nav
+	
+	.leaderboards .error {
+		margin-top:20px; 
+		}
+
+	.leaderboard-controls {
+		min-width:710px; 
+		}
+
+	.leaderboard-control {
+		float:left; 
+		width:50px;
+		height:50px; 
+		cursor:pointer;
+		background:transparent url("/assets/images/gamify/leaderboard/leaderboard-arrow-left_50x50.png");
+		background-color:#CCC
+		}
+
+	.leaderboard-control.leaderboard-next {
+		background:transparent url("/assets/images/gamify/leaderboard/leaderboard-arrow-right_50x50.png"); 
+		background-color:#CCC
+		}
+	
+	// .leaderboard-nav 									 { background:#eb132c; }
+	// .leaderboard-nav .dd-menu .dd-content li 			 { background:#d01228; }
+    // .leaderboard-nav .dd-menu .dd-content li:nth-child(2) { background:#b51225; }
+	// .leaderboard-nav .dd-menu .dd-content li:nth-child(3) { background:#9b1221; }
+	// .leaderboard-nav .dd-menu .dd-content li:nth-child(4) { background:#80121e; }
+ 	// .leaderboard-nav .dd-menu .dd-content li:nth-child(5) { background:#66121a; }
+
+	// define a mixin for generating color steps in leaderboard nav, similar to original styles above
+	@mixin gamify-leaderboard-colorway($leaderboard-base, $leaderboard-accent)
+	{
+		.leaderboard-nav,
+		.leaderboard-nav .dd-menu .dd-content li {
+			background-color:$leaderboard-base;
+			}
+			
+		.leaderboard-control,
+		.leaderboard-control.leaderboard-next {
+			background-color:$leaderboard-accent
+			}
+			
+		@for $i from 1 through 5 {
+			.leaderboard-nav .dd-menu .dd-content li:nth-child(#{$i}){
+				background:darken($leaderboard-base, $i * 5%)
+				}
+		}
+	}
+
+	// set up generic context
+	@include gamify-leaderboard-colorway($gamify-accent,$gamify-accent-secondary);

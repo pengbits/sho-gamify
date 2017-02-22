@@ -1,0 +1,133 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <desktop>
+	// @project				gamification
+	// @file				user_snapshot.css
+	// @author				ncavanagh
+	// @modified			04.12.13
+	// @desc				rules for user_snapshot (stub)
+	// --------------------------------------------------------------------------------------------
+
+	.user-snapshot {}
+
+	// =:generic
+	.user-snapshot.large-avatar {
+		.user-snapshot-top {
+			padding-top:18px;
+			padding-left:18px;
+			}
+		.user-snapshot-avatar {
+			width:200px;
+			height:200px;
+			}
+		.user-snapshot-name {
+			padding-top:8px;
+			padding-bottom:11px;
+			font-size:20px;
+			line-height:25px;
+			}
+		}
+	
+	// =:series theme
+	.user-snapshot.small-avatar {
+		
+		.user-snapshot-avatar,
+		.user-snapshot-name {
+			float:left; 
+			}
+		
+		.user-snapshot-avatar {
+			width:50px;
+			height:50px;
+			}
+	
+		.user-snapshot-name {
+			padding-left:14px;
+			width:170px;
+			height:50px;
+			font-size:16px;
+			line-height:50px;
+			background:transparent url("/assets/images/gamify/user_snapshot/user-snapshot-bg-gradient_2x2.png"); 
+			}
+		
+		}
+
+	.user-snapshot-border {
+		clear:both;
+		margin-bottom:2px;
+		padding:0;
+		width:100%;
+		height:1px;
+		background-color:#000;
+		border-bottom:1px solid #2b2b2b; 
+		}
+
+	.user-snapshot-points {
+		padding:20px;
+		}
+	
+	.user-snapshot-callout h4 {
+		margin-bottom:1px;
+		font-size:30px;
+		line-height:30px;
+		color:$gamify-accent;
+		
+		}
+
+	// shift icon into alignment since chrome scrolling bug prevents us from using pos:relative here;	
+	// https://issues.sho.com/browse/SITE-7561#comment-62187	
+	.chr {
+		.user-snapshot-points {
+			padding-bottom:16px;
+		}
+		.user-snapshot-callout p {
+			padding-top:4px; 	
+			vertical-align:top;
+		}
+	}
+	
+	.user-snapshot-callout-points {
+		width:71.83%; // 153 out of 213 px
+		}
+		
+	.user-snapshot-callout-level {
+		width:28.17%; // 60 out of 213px
+		h4 { text-indent:-10px; }
+		}
+
+
+	.user-snapshot-points-details {
+		margin-top:20px;
+		line-height:21px; 
+		span {
+			position:absolute;
+			right:20px; 
+			z-index:500; 
+			}
+
+		}
+
+	.user-snapshot .gamification-signup {   
+		display:block;     
+		//margin:20px 0 0 0;
+		margin:20px; margin-top:0;
+		padding:8px 10px 8px;
+		width:175px;
+		text-align:center;
+		cursor:pointer;
+		text-transform:uppercase;
+		text-decoration:none;
+		font-size:11px;
+		border:1px solid #000;
+		outline:0;
+		background:#1f1f1f url(/assets/images/accounts/bg_button.jpg) 0 0 repeat-x; 
+		}
+
+	.user-snapshot .user-snapshot-points-value,
+	.user-snapshot .user-snapshot-points-details span {
+		color:$gamify-accent 
+		}
+
+

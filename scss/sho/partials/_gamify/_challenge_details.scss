@@ -1,0 +1,316 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <mobile>
+	// @project				gamification
+	// @file				challenge_details.css
+	// @author				dpaul
+	// @modified			04.01.14
+	// @desc				rules for challenge details.
+	// --------------------------------------------------------------------------------------------
+	// only used in stub page 
+	.challenge-details-wrapper {
+		padding:98px 0px; 
+		width:100%;
+		min-height:350px; 
+		background:#1d1d1d;
+		}
+	
+	.challenge-expanded-state-dummy {
+		margin:0px auto;
+		position:relative;
+		width:620px;
+		min-height:300px;
+		}
+		
+	.include-debug .challenge-expanded-state-dummy {	
+		outline:purple solid 1px;
+		}
+	
+	//
+	// =:FPO reference stubs
+	.include-fpo .challenge-expanded-state-dummy { 
+		background-image:url('/assets/images/gamify/FPO/challenge-details_620x300.jpg'); }
+		
+	.include-spec .challenge-expanded-state-dummy { 
+		background-position:1px 0px;
+		background-image:url('/assets/images/gamify/FPO/challenge-details-spec_620x300.jpg'); }	
+	
+	// multi-action
+	.include-fpo.fpo-multi-action .challenge-expanded-state-dummy { 
+		background-image:url('/assets/images/gamify/FPO/challenge-details-multi_620x300.jpg'); }
+
+	.include-spec.fpo-multi-action .challenge-expanded-state-dummy { 
+		background-position:2px -1px;
+		background-image:url('/assets/images/gamify/FPO/challenge-details-multi-spec_620x300.jpg');}
+
+	// paginated, refix 
+	.include-fpo.fpo-paginated .challenge-expanded-state-dummy { 
+		height:318px;
+		background-image:url('/assets/images/gamify/FPO/challenge-details-paginated-refix_620x318.jpg'); }
+
+	.include-spec.fpo-paginated .challenge-expanded-state-dummy { 
+		height:318px;
+		background-image:url('/assets/images/gamify/FPO/challenge-details-paginated-refix-spec_620x318.jpg');}
+
+	// complete 
+	.include-fpo.fpo-multi-action-complete .challenge-expanded-state-dummy { 
+		background-image:url('/assets/images/gamify/FPO/challenge-details-multi-complete_620x300.jpg'); }
+		
+	// helpful link for authenticating 
+	#gamify-container a.login {
+		display:inline-block;
+		margin-top:10px;
+		margin-left:10px;
+		padding:9px 10px 6px 10px;
+		background:#333;
+		color:#FFF;
+		text-transform:uppercase;
+		}
+		
+	// =:detail styles 
+	// ------------------------------------------------------------------------------------------
+	.challenge-details {
+		font-size:12px;
+		font-weight:400; 
+		line-height:14px;
+		color:#999999;
+		}
+	
+	// hi-contrast styles for working on dimensions/margins/metrics
+	.hi-contrast .challenge-details{
+		background:#ccc;
+		color:#000 !important;
+		}
+	
+	.challenge-details .left,
+	.challenge-details .right {
+		width:300px;
+		min-height:350px; /* was 300 */
+		position: inherit;
+		}
+		
+	.challenge-details .right {
+		width:295px; 					 /* 320px - 25px center margin = 295px */
+		}
+		
+	.ff .challenge-details .right-inner { /* droy edit to fix ff layout issue */
+	//	position: absolute;
+	//	bottom: 25px;
+		}
+	
+	.include-debug .challenge-details .left,
+	.include-debug .challenge-details .right {
+		outline:green solid 1px
+		}
+	
+	.include-debug .challenge-details .right-inner {
+		outline:green solid 1px;
+		}
+	
+	//
+	// =:vertical-alignment
+	// it seems only chrome and ie9-10 support aligning the inner content vertically with css,
+	// for other browsers, we resort to javascript
+	
+	.chr .challenge-details .right, .ie  .challenge-details .right  {
+		display:table;
+		}
+		
+	.chr .challenge-details .right-inner, .ie  .challenge-details .right-inner {
+		display: table-cell;		
+		vertical-align: middle;			
+		}
+	
+	//
+	// =:badge, =:primary-art 
+	
+	.challenge-details .left img {
+		margin-top:25px; /* center art vertically within 350px tall container */
+		width:300px;
+		height:300px;
+		}
+		
+	.challenge-details h3  /* challenge name */{
+		color:#818181;
+		font-weight:600;
+		text-transform:uppercase;
+		margin-right:32px; /* clear closer */
+		}
+	
+	// deprecated this as it was found to be redundant (SITE-6626)
+	// .challenge-details h4 {
+	// 	margin-top:11px;
+	// 	margin-bottom:6px;
+	// 	line-height:10px;
+	// 	}
+		
+	.challenge-details h3 {
+		margin-bottom:5px;
+		font-size:16px;
+		line-height:19px;
+		color:#FFF;
+		}
+		
+	.challenge-details p, 	
+	.challenge-details.multi-action ol {
+		margin-bottom:11px; /* optically:15px */
+		}
+	.challenge-details.multi-action p {
+		margin-bottom:6px; /* optically:10px */
+		}
+	
+	.hi-contrast .challenge-details h4,
+	.hi-contrast .challenge-details h3,	
+	.hi-contrast .challenge-details p {
+		color:#000 !important
+		}
+
+	/* 
+	=:progress, =:points */
+	.challenge-details-stats .challenge-details-stat {
+		float:left;
+		position:relative;
+		margin-bottom:11px; /* optically:15px */
+		width:90px; 
+		height:45px;             
+		}
+		
+	.challenge-details-stats .challenge-details-stat em {
+		display:block;
+		font-size:34px;
+		line-height:30px;
+		color:$gamify-accent;
+		font-weight:600;
+		}
+		
+	.challenge-details-stats .challenge-details-progress {
+		padding-left:40px;
+		}
+		
+	.challenge-details-stats .challenge-details-progress > div{
+		position:absolute;
+		top:0; left:0;
+		}
+		
+	.ie8 .challenge-details-stats .challenge-details-progress input {
+		display:none
+		}
+	
+	/* =:checkmark */
+	.challenge-details-stats .challenge-progress-completed-state {
+		width:30px; height:30px;
+		}
+		
+	.include-fpo .challenge-details-actions {
+		position:relative;top:-6px;
+		}
+	.include-fpo .challenge-details-actions .btn {
+		margin-left:100px; /* cheat to the right for comparison */
+		}
+
+	/* 
+	=:actions, =:multi-action styles */
+	.challenge-details.multi-action ol {
+		list-style:decimal;
+		}
+	
+	.challenge-details.multi-action ol li {	
+		margin-left:17px;
+		}
+	
+	.challenge-details.multi-action li {
+		margin-bottom:5px; /* optically: 10px*/
+		}
+	
+	/*
+	for the =:paginated multi-action challenges we use an undordered list, so that the actual rule positions
+	can be drawn to mimic the list styles. for non-paginated challenges, a regular old ordered list will do.. */			
+	.challenge-details.multi-action li span {
+		display:inline-block;
+		width:17px;
+		}
+		
+	.challenge-details.multi-action li.rule-completed-true {
+		text-decoration:line-through;
+		color:#5D5D5D;
+		}
+	
+	/*
+	=:paginated */
+		
+	.challenge-details.multi-action ul.paginated-rule-list {
+		padding-top:12px;
+		margin-top:1px;
+		background:transparent repeat-x url(/assets/images/gamify/challenge_details/pagination-double-border_2x100.png) top left;
+		}
+		
+	.challenge-details-pagination {	
+		margin-bottom:12px; 
+		padding-bottom:5px;
+		background:transparent repeat-x url(/assets/images/gamify/challenge_details/pagination-double-border_2x100.png) bottom left;
+		}
+			
+	.challenge-details-pagination li .paginate-control {
+		height:8px; 
+		padding-top:1px;
+		padding-bottom:5px;
+		width:132px; /* 295px / 2 = 147; 147 - 15px padding = 132 */
+		background:transparent no-repeat url(/assets/images/gamify/challenge_details/pagination-prev_5x8.png) center left;
+		cursor: pointer;
+		}
+	
+	.challenge-details-pagination li .paginate-control.disabled {
+		visibility:hidden;
+		}
+		
+	.challenge-details-pagination li .paginate-prev {
+		padding-left:15px;
+		}
+		
+	.challenge-details-pagination li .paginate-next {
+		padding-right:15px;
+		text-align:right;
+		background-image:url(/assets/images/gamify/challenge_details/pagination-next_5x8.png);
+		background-position: center right;
+		}
+		
+	.hi-contrast .challenge-details-pagination li .paginate-control {
+		color:#000 !important;
+		}
+		
+	/* 
+	=:actions, get started */		
+	.challenge-details-actions .btn {
+		display:inline-block;
+		padding:9px 10px 6px 10px;
+		font-size:11px;
+		line-height: 5px;//7px;
+		height:7px;
+		text-transform:uppercase;
+		font-weight:600;
+		color:#FFF;
+		border:#000 solid 1px;
+		background:#333 repeat-x url(/assets/images/gamify/challenge_details/get-started-bg-gradient_10x22.jpg) top left;
+		text-decoration:none;
+		cursor:pointer;
+		
+		&.redeem {
+			color:#999;
+		}
+		&.is-inactive {
+			opacity:0.3;
+			cursor: default;
+		}
+	}
+	
+	.challenge-details-disclaimer {
+		color:#eb132c;
+		font-size:16px;
+		line-height:20px;
+		font-weight:600;
+	}
+	
+		
+	/* No surrender, No delete! */

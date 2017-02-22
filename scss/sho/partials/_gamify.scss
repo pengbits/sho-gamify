@@ -1,0 +1,28 @@
+
+	/*
+	JS
+	--------------------------------------------------------------------------------------------
+	@site				sho.com <mobile>
+	@project			gamification
+	@file				gamify.css
+	@author				dpaul
+	@modified			03.04.13
+	@desc				import of gamification/red-rewards styles
+	------------------------------------------------------------------------------------------*/
+	@import "_gamify/_challenge_gallery";
+	@import "_gamify/_challenge_details";
+	@import "_gamify/_fan_clubs";
+	@import "_gamify/_activity_stream";
+	@import "_gamify/_leaderboards";
+	@import "_gamify/_user_snapshot";
+	@import "_gamify/_modals";
+	@import "_gamify/_vertical_nav";
+	@import "_gamify/_welcome";
+	@import "_gamify/_welcome_remix";
+	@import "_gamify/_faq";
+	@import "_gamify/_gamify";
+	// redemption styles
+	@import "_gamify/_redemption/_redemption";
+	@import "_gamify/_redemption/_item_details.scss";
+	@import "_gamify/_redemption/_address_form.scss";
+	@import "_gamify/_redemption/_success.scss";

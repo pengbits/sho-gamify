@@ -1,0 +1,174 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <desktop>
+	// @project				gamification
+	// @file				gamify.css
+	// @author				dpaul
+	// @modified			04.25.13
+	// @desc				global styles for gamifcation pages 
+	// --------------------------------------------------------------------------------------------
+	
+	
+	body.gamify {
+		// background:#1d1d1d // check in series context
+		}
+		
+	#nav-gamify {
+		background:$gamify-accent;
+		}
+		
+	// 
+	// =:wrapper 
+	// undo max-width styles from series template. and nav-footer margin 
+	.has-nav-footer.gamify .content {
+		max-width:100%;
+		margin-bottom:0;
+		}
+	.gamify.red-rewards .series-footer {
+		max-width:100%;
+	}
+	// new column setup, used in red rewards pages and penny dread
+	// (sets up fixed-left-rail, fluid-right-rail layout)
+	.gamify {
+	
+		@include two-col-fixed-fluid(235px);
+		
+		.col-left {
+			color:#818181;
+			background:#1D1D1D;
+			}
+
+		.col-right {
+			border-left:#000 solid 1px;
+			}
+		
+		background:#1D1D1D repeat-y url(/assets/images/lib/layouts/two_col_fixed_fluid_235_1D1D1D_with_stroke.png) top left 
+		
+	}
+	
+	.gamify.redemption {
+		background-image:none;
+	}
+    	
+	// old column setup, still used in homeland and dexter for now, unless things change in SITE-6553
+	// (sets up docked, absoluted left rail with static right rail)
+	.docked.gamify-column-left {
+		top:0;
+		bottom:0;
+		left:0;
+		width:235px;
+     	color:#818181;
+		background:#1D1D1D;
+		border-right:#000 solid 1px
+		}
+
+	// shift page content and persistent left column down to clear docked navigation...
+	.has-nav-secondary.gamify .docked.gamify-column-left {
+		top:100px;    
+		} 
+
+	.series-gamify-container {
+		padding-left:236px; 
+		min-height: 600px;
+		}
+	
+	// stop series advisories from colliding with left column
+	.gamify .series-footer {
+		margin-left:236px;
+		min-width:678px;
+		}
+		
+	/*
+	=:modules, =:global
+	---------------------------------------------------------------------------------------*/
+	.gamify-icon-info { 
+	    display:inline-block;
+		position:relative;
+		left:4px;
+		top:3px;
+		width:14px;
+	    height:14px;
+	    background:transparent no-repeat url("/assets/images/gamify/icons/btn-info_14x14.png") 0px 0px;
+	    cursor:pointer; 
+	
+		.chr & {
+			margin-left:4px;		// chrome scrolling bug prevents us from using pos:relative here
+			position:static;		// https://issues.sho.com/browse/SITE-7561#comment-62187
+			}
+		}
+		
+
+ 	.series-gamify-container h2, h2.gamify-section-header { 
+	    padding:0 22px;
+		line-height:53px;
+	    font-weight:700; // was 600 aka medium, but we need to use true medium in redemption banner below 
+		font-size:16px;
+	    background:#000;
+	    color:$gamify-accent;
+		}
+	
+	.gamify-section-header .gamify-icon-info, .series-gamify-container .gamify-icon-info {
+			position: relative;
+			top: 1px;
+		}
+		
+	.gamify-icon-info#available-points-info {
+		// good luck pixel-pushing this sucker.. 
+		// lack of baselines in above h2 element + google scroll bug
+		// have really constrained our ability to cheat the icon up or down
+		}
+	
+	.redemption-banner {
+		padding:18px 20px 26px 20px;
+		max-width:580px;
+		font-size:14px;
+		line-height:24px;
+		color:#999;
+		
+	 	h1 {
+			color:$gamify-accent;
+			font-size:30px;
+			font-weight:600;
+			line-height:45px;
+			}
+		a {
+			color:#999;
+			text-decoration:underline;
+			}
+		}
+
+		
+	/*
+	=:canonical url 
+	---------------------------------------------------------------------------------------*/
+	.gamify.canonical-url .content {
+		background:#000 no-repeat url(/assets/images/lib/spinners/balls_000000_48x48.gif) center center;
+		}
+		
+	.gamify.canonical-url h1 {
+		padding:4px 8px;
+		font-size:18px;
+		line-height:32px;
+		}
+		
+	.gamify.canonical-url pre { 
+		display:none;  
+		}
+		
+	.gamify.canonical-url.development {
+		pre {	
+			display:block; 
+		}
+ 		h1 { 
+			display:none;  
+		}
+		.content {
+			background:none
+		}
+	}
+	
+	
+	/* No surrender, No delete! */
+	

@@ -1,0 +1,79 @@
+
+// CSS
+// ------------------------------------------------------------------------------------------
+// @site				sho.com <common>
+// @project      		gamify redemption
+// @file				_redemption.scss
+// @author				dmccleod
+// @modified			09.29.14
+// @desc				gamify redemption classes
+// ---------------------------------------------------------------------------------------- 
+
+    // common red color in red rewards theme fonts and background
+    $rewards-red: #eb132c;
+    
+    // mix in for dark grey gradient styles	
+    @mixin linear-gradient($top-color: #363636, $mid-color: #1e1e1e, $bottom-color: #262626) {         
+        background: -webkit-linear-gradient($top-color 20%, $mid-color 97%, $bottom-color 1%);
+        background: -moz-linear-gradient($top-color 20%, $mid-color 97%, $bottom-color 1%);
+        background: -ms-linear-gradient($top-color 20%, $mid-color 97%, $bottom-color 1%);     	
+        background: -o-linear-gradient($top-color 20%, $mid-color 97%, $bottom-color 1%);     
+	    background: linear-gradient($top-color 20%, $mid-color 97%, $bottom-color 1%);
+    }    
+             
+    .redemption {         
+        .redemption-column {
+            @extend .cf;        
+            margin: 92px auto 100px;           
+            width: 610px;   // prevously 576px caused headline text wrapping
+            &.error {
+                width: 770px;
+                margin: 230px auto 0;
+                .messaging-header{
+                     padding-bottom: 100px;
+                     text-align: center;
+                }
+                .button {
+                    width: 100px;
+                   margin: 0 auto;
+                }
+            }            
+        }
+   
+        .nav-secondary {
+            background: $rewards-red;
+        }
+        .button {        
+    		text-transform: uppercase;
+    		display: block;
+    		background: #777;
+    		min-width: 82px;
+    		padding: 5px 10px 5px;
+    		text-align: center;
+    		cursor: pointer;
+    		border: 1px solid #000;
+    		outline: 0;
+    		@include linear-gradient(#363636, #1e1e1e, #262626);
+    	}
+    	        
+        .messaging-header {
+            color: $rewards-red;
+            @include font(30, 1.125, 600);
+        }
+
+        .sub-header {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .u-float-l {
+            float: left;
+        }
+        .u-float-r {
+           float: right; 
+        }
+    	
+    }
+    
+    
+    

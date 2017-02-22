@@ -1,0 +1,70 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site				sho.com <desktop>
+	// @project				gamification
+	// @file				/lib/scss/sho/partials/_gamify/welcome.scss
+	// @author				ncavanagh
+	// @author				dpaul
+	// @author				dmccleod
+	// @modified			03.18.14 
+	// @desc				rules for red rewards welcome message
+	// @note				temp namespace behind *-series while refresh is pending
+	// @todo				drop when welcome_remix launches
+	// ------------------------------------------------------------------------------------------*/
+
+	.gamify-welcome-series-container {
+	    background-color:#1d1d1d; }
+	    
+	.gamify-welcome-series {
+	    width:675px; }
+	
+	.gamify-welcome-series h1 {
+	    padding:20px 0 6px 20px;
+	    font-size:34px;
+	    line-height:34px;
+		color:#ccc; }
+
+	.gamify-welcome-series p {
+	    padding:0 20px;
+    	font-size:16px;
+    	line-height:1.3em;
+    	color:#999; }
+	    
+	.gamify-welcome-series ul {
+	    margin:45px 0 0 10px; }
+	    
+    .gamify-welcome-series ul li {
+       float:left;
+       padding-top:143px;
+	   width:223px;
+	   background:transparent url("/assets/images/gamify/welcome/log-in_223x101.png") top center no-repeat; }
+	   
+    .gamify-welcome-series ul li:nth-child(2) {  
+   	   background:transparent url("/assets/images/gamify/welcome/complete-challenges_223x101.png") top center no-repeat; }
+   	   
+    .gamify-welcome-series ul li:nth-child(3) {  
+  	   background:transparent url("/assets/images/gamify/welcome/earn-rewards_223x101.png") top center no-repeat; }
+	   
+    .gamify-welcome-series ul li h2 {
+       padding:10px 0 0 23px;
+       width:200px;
+       height:24px;
+       font-size:14px;
+       font-weight:400;
+       color:#fff;
+       background:transparent url("/assets/images/gamify/welcome/bg-header_223x34.png") right no-repeat;  }
+       
+    .gamify-welcome-series ul li:first-child { 
+       width:208px; }
+       
+    .gamify-welcome-series ul li:first-child h2 { 
+       width:185px; }
+	    
+    .gamify-welcome-series ul p {
+	    margin-top:15px;
+	    padding:0 23px;
+	    height:118px;
+	    font-size:12px; }
+	

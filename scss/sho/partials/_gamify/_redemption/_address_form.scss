@@ -1,0 +1,196 @@
+
+// CSS
+// ------------------------------------------------------------------------------------------
+// @site				sho.com <common>
+// @project      		gamify redemption
+// @file				_address_form.scss
+// @author				dmccleod
+// @modified			09.26.14
+// @desc				address form and read only address modules
+// ----------------------------------------------------------------------------------------
+
+.redemption {
+    .address-form--read-only {
+        @include border-box;
+        .address-form__headline {       
+            border-bottom: 1px solid #2b2b2b; 
+            padding-bottom: 20px;
+        }
+    }    
+      
+    h3 {
+        line-height: 33px;   
+    }  
+        
+    .address-form {
+        @include border-box;
+    	padding: 30px 50px; 
+    	background: #000;
+    	color: #9a9a9a;
+    	max-width: 576px;	
+    	.address-form__headline {    	             
+            margin: 0 0 25px;
+            color: #fff;
+            font-size: 16px;
+            .edit-address {
+               font-size: 12px;
+               line-height: inherit;
+            }                                               
+        }
+        
+        //error messages
+        .errorMsg {
+            color: $error-red-dark;
+            display: block;
+            margin-bottom: 15px;
+        }
+         
+        .button {
+            margin: 20px 10px 50px 0;
+            color: #fff;
+        }    
+        
+        .edit-address, .cancel {
+            text-decoration: underline;
+            color: #828282;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }        
+                 
+        .address-form__line {
+            display: block;
+            margin: 0 0 10px;
+            font-size: 14px;
+            line-height: initial;
+        }
+        
+        form {
+            input:not(.edit-address) {              
+                background: #424242;
+                color: #fff;
+                padding: 4px;
+                margin: 0 0 15px;
+                border: none;
+                clear: right;                   
+                &.input-long {
+                    width: 67%;
+                }
+                &[type="tel"] {
+                    text-align: center;
+                    margin-left: 2.5%;
+                }                
+                &[type="submit"] {
+                    @include linear-gradient(#363636, #1e1e1e, #262626);
+                }
+                &.zip-code {
+                    width: 15%;
+                }
+                &.error {
+                    border: $error-red-dark solid 1px;
+                }                
+            }
+            /*
+            // styles for elements marked as invalid (client validation)
+            input:required:invalid, input:focus:invalid {             
+                
+            }
+             // place a style used once the field is corrected
+            input:required:valid {
+                border: none;
+            }
+            */                         
+            
+            fieldset {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+             
+            label {
+                width: 25%;
+                margin: 0 4% 25px 0;
+                clear: left;
+                &[for="zipCode"] {
+                    clear: inherit;
+                    width: 12%;
+                    min-width: 50px;
+                    margin: 0 1% 15px 0;
+                    height: 22px;
+                }
+                &.error {
+                    color: $error-red-dark;
+                }
+            }
+                        
+            .select-wrapper {
+                box-sizing: border-box;
+                width: 30%;  // was 24% before adding uniform js for custome select styling              
+                margin: 0 0 0 1.5%;
+                position: relative;
+                .selector {
+                    width: 100%;
+                    padding-left: 10px;                    
+                    span {
+                        width: 100%;
+                    }
+                }
+            }
+            
+             //Custom styling of select element only works in Chr, Safari, partial FF support, IE and Windows has issues
+                        
+            select { 
+                /*               
+                -webkit-border-radius:2px;
+                -moz-border-radius:2px;
+                border-radius:2px;
+                border:none;
+                border-top: 1px solid #505050;                
+                outline:none;
+                display: inline-block;
+                color:#fff; 
+                background: #363636;                
+                @include linear-gradient(#363636, #1e1e1e, #262626);                               
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                appearance:none;
+                option {
+                    color: #fff;
+                }*/
+                // din not carrying over to select box, possible because of custom styling? 
+                font-family: ff-din-web, Calibri, Arial, sans-serif; 
+                width: 100%; 
+                padding: 4px 10px;
+                &.error {
+                    border: $error-red-dark solid 1px;   
+                }
+                             
+            }
+            // used for custom psuedo-styling of drop down arrow, but pointer-events still not supported in IE < 11
+            .select-arrow {                
+                //position: absolute;
+                //right: 5%;
+                //top: 4px;
+                //font-size: 10px;
+                //cursor:pointer;
+                //pointer-events:none;
+                //transform:scaleY(0.5); 
+                display: none;
+            }           
+        }        
+    }
+}    
+
+    //  Win Chrome state label padding
+    .win {
+    	&.chr {
+    		.redemption {
+    			.address-form form {				
+    				label[for="state"] {
+    					margin-top: 3px;
+    				}
+    			}
+    		}    
+    	}
+    }
+    

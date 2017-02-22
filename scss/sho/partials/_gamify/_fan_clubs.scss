@@ -1,0 +1,72 @@
+
+	// 
+	// CSS
+	// --------------------------------------------------------------------------------------------
+	// @site			sho.com <desktop>
+	// @project			gamification
+	// @file			_fan_clubs.scss
+	// @author			dpaul
+	// @modified		03.04.14
+	// @desc			rules for fan clubs
+	// --------------------------------------------------------------------------------------------
+
+	.fan-club-item {
+		@extend .challenge;
+		
+		a {
+			@extend .challenge-inner.no-badge; // for shader
+			display:block;
+			position:relative;
+			
+			
+			// labels
+			span {
+				@include three-corners-top;
+				padding:0px 20px;
+				font-weight:600;
+				color:#818181;
+				height:14px;
+				}
+			
+			.fan-club-name {
+				position:static;
+				padding-top:18px;
+				font-size:16px;
+				line-height:19px;
+				height:20px;
+				color:#FFF;
+				text-transform:uppercase;
+				}
+			
+			.fan-club-points-earned,
+			.fan-club-challenges-completed {
+				bottom:18px;
+				em {
+					position:absolute;
+					display:block;
+					width:20px;
+					right:20px;
+					bottom:0;
+					text-align:right;
+					color:$gamify-accent;
+					}
+				}
+				
+			.fan-club-points-earned {
+				bottom:43px;
+				}
+			}
+			
+		&.small a {
+			width:219px;
+			min-height:219px;
+			}
+			
+		&.large a {
+			width:439px;
+			min-height:439px;
+			}
+		}
+
+	
+	// No surrender, No delete! 

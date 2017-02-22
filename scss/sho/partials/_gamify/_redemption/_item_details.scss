@@ -1,0 +1,61 @@
+
+    // CSS
+    // ------------------------------------------------------------------------------------------
+    // @site				sho.com <common>
+    // @project      		timber
+    // @file				_products.scss
+    // @author				dmccleod
+    // @modified			10.21.14
+    // @desc				redemption product classes
+	//
+	// 	<figure class="item-details">
+	// 		<img src="http://www.sho.com/assets/images/gamify/items/Shameless-shot-glass.jpg" class="item-details__product-image u-float-l" alt="false">
+	// 		<figcaption class="item-details__details u-float-l">
+	// 			<h1 class="item-details__name">Shameless Shot Glass</h1><p class="item-details__description">Take it like a Gallagher with this Shameless shot glass</p>
+	// 			<h4 class="item-details__price">50<em>Points</em></h4>
+	// 		</figcaption>
+	// 	</figure>		
+
+    // ---------------------------------------------------------------------------------------- 
+
+
+      .redemption {        
+        .item-details {             
+            @extend .cf;           
+            margin: 50px 0; 
+            .item-details__details {
+                @include border-box;   
+                padding: 80px 0 0 23px;
+                width: 46%;
+            }
+            .item-details__name {                
+                padding: 0;
+                margin-bottom: 5px;
+                font-size: 16px;
+                line-height: 19px;
+                color: #FFF;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .item-details__description {                
+                margin-bottom: 20px;
+                color: #999;
+            }
+            .item-details__price {
+                line-height: 22px;
+                em {                    
+                    display: block;                    
+                    padding-top: 10px;
+                    font-size: 12px; 
+                    color: #999;     
+                }                          
+            }            
+        }        
+
+        .item-details__price {
+            color: $rewards-red;
+            font-size: 34px;            
+            font-weight: 600;            
+        } 
+       
+    }
